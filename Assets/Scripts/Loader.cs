@@ -5,7 +5,6 @@ using UnityEngine;
 public class Loader : MonoBehaviour {
 
     public GameObject gameManager;
-    public GameObject networkManager;
 
 	void Awake()
     {
@@ -14,10 +13,6 @@ public class Loader : MonoBehaviour {
             Instantiate(gameManager);
         }
 
-        if (NetworkManager.instance == null)
-        {
-            Instantiate(networkManager);
-        }
     }
 	
 	// Update is called once per frame
