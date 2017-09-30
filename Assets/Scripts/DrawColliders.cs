@@ -5,6 +5,7 @@ using UnityEngine;
 public class DrawColliders : MonoBehaviour
 {
 
+    public BoxCollider[] colliders;
     public bool drawColliders;
 
     void Start()
@@ -18,11 +19,9 @@ public class DrawColliders : MonoBehaviour
         {
             return;
         }
-        BoxCollider b = GetComponent<BoxCollider>();
-        Transform t = GetComponent<Transform>();
 
         // Draw BoxColliders
-        if (b != null)
+        foreach (var collider in colliders)
         {
             Vector3 tl = new Vector3(t.position.x - (b.size.x / 2), t.position.y + (b.size.y / 2), 0f);
             Vector3 bl = new Vector3(t.position.x - (b.size.x / 2), t.position.y - (b.size.y / 2), 0f);
