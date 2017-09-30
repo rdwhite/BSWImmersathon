@@ -11,6 +11,8 @@ public class WandController : MonoBehaviour
     private SteamVR_TrackedObject trackedObj;
     private SteamVR_Controller.Device controller { get { return SteamVR_Controller.Input((int)trackedObj.index); } }
 
+    private GameObject pickup;
+
     // Use this for initialization
     void Start()
     {
@@ -22,21 +24,24 @@ public class WandController : MonoBehaviour
     {
         if (controller.GetPressDown(triggerButton))
         {
-
+            if(this.pickup != null)
+            {
+                this.pickup.transform.parent = this.transform;
+            }
         }
         if (controller.GetPressUp(triggerButton))
         {
-
+            this.pickup.transform.parent = null;
         }
     }
 
     void OnTriggerEnter(Collider collider)
     {
-
+        this.pickup = collider.gameObject;
     }
 
     void OnTriggerExit(Collider collider)
     {
-
+        this.pickup = null;
     }
 }
