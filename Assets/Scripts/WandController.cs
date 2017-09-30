@@ -11,7 +11,7 @@ public class WandController : MonoBehaviour
     private SteamVR_TrackedObject trackedObj;
     private SteamVR_Controller.Device controller { get { return SteamVR_Controller.Input((int)trackedObj.index); } }
 
-    private GameObject pickup;
+    private InteractableObject pickup;
 
     // Use this for initialization
     void Start()
@@ -22,26 +22,31 @@ public class WandController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (controller.GetPressDown(triggerButton))
+        if (controller.GetPressDown(triggerButton) && this.pickup != null)
         {
-            if(this.pickup != null)
-            {
-                this.pickup.transform.parent = this.transform;
-            }
+            this.pickup.BeginInteraction(this);
         }
-        if (controller.GetPressUp(triggerButton))
+        if (controller.GetPressUp(triggerButton) && this.pickup != null)
         {
-            this.pickup.transform.parent = null;
+            this.pickup.EndInteraction(this);
         }
     }
 
     void OnTriggerEnter(Collider collider)
     {
-        this.pickup = collider.gameObject;
+        var pickup = collider.GetComponent<InteractableObject>();
+        if (pickup != null)
+        {
+            this.pickup = pickup;
+        }
     }
 
     void OnTriggerExit(Collider collider)
     {
-        this.pickup = null;
+        var pickup = collider.GetComponent<InteractableObject>();
+        if (pickup != null)
+        {
+            this.pickup = null;
+        }
     }
 }

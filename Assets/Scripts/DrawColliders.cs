@@ -8,6 +8,8 @@ public class DrawColliders : MonoBehaviour
     public BoxCollider[] colliders;
     public bool drawColliders;
 
+    private WandController interactingObject = null;
+
     void Start()
     {
 
@@ -32,6 +34,26 @@ public class DrawColliders : MonoBehaviour
             //Gizmos.DrawLine(bl, br);
             //Gizmos.DrawLine(br, tr);
             //Gizmos.DrawLine(tr, tl);
+        }
+    }
+
+    void OnTriggerEnter(Collider collider)
+    {
+        var wandObject = collider.GetComponent<WandController>();
+        if (wandObject != null)
+        {
+            this.interactingObject = wandObject;
+            this.drawColliders = true;
+        }
+    }
+
+    void OnTriggerExit(Collider collider)
+    {
+        var wandObject = collider.GetComponent<WandController>();
+        if (wandObject.Equals(interactingObject))
+        {
+            this.interactingObject = null;
+            this.drawColliders = false;
         }
     }
 }
