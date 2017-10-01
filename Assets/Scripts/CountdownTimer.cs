@@ -65,7 +65,6 @@ public class CountdownTimer : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    // Use this for initialization
     void Start()
     {
         this.timeLeft = this.initialTime;
