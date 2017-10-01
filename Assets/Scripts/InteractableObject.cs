@@ -18,6 +18,9 @@ public class InteractableObject : MonoBehaviour
     private bool currentlyInteracting;
     private WandController attachedController = null;
     private Transform interactionPoint;
+    private HashSet<FixedJoint> joints = new HashSet<FixedJoint>();
+
+    private GameObject collidedObject;
 
     private CanBePlanted plantable;
     // Use this for initialization
@@ -35,7 +38,7 @@ public class InteractableObject : MonoBehaviour
     {
         if (currentlyInteracting && attachedController != null)
         {
-            posDelta = attachedController.transform.position - interactionPoint.position;
+            // posDelta = attachedController.transform.position - interactionPoint.position;
 
             this.mRigidBody.MovePosition(attachedController.transform.position);
             this.mRigidBody.MoveRotation(attachedController.transform.rotation);
@@ -55,6 +58,29 @@ public class InteractableObject : MonoBehaviour
 
     public void BeginInteraction(WandController controller)
     {
+
+        if (collidedObject != null)// remove the joint as soon as we begin interacting with the object.
+        {
+            var objectBody = collidedObject.GetComponent<Rigidbody>();
+            FixedJoint foundJoint = null;
+            if (objectBody != null)
+            {
+                foreach (var j in joints)
+                {
+                    if (j.connectedBody == objectBody)
+                    {
+                        foundJoint = j;
+                        break;
+                    }
+                }
+            }
+            if (foundJoint != null)
+            {
+                joints.Remove(foundJoint);
+                Destroy(foundJoint);
+            }
+        }
+
         this.attachedController = controller;
         this.interactionPoint.transform.position = controller.transform.position;
         this.interactionPoint.transform.rotation = controller.transform.rotation;
@@ -71,9 +97,13 @@ public class InteractableObject : MonoBehaviour
     {
         if (controller == attachedController)
         {
-            this.mRigidBody.useGravity = true;
-            this.attachedController = null;
-            this.currentlyInteracting = false;
+            if (this.collidedObject != null)
+            {
+                var joint = this.gameObject.AddComponent<FixedJoint>();
+                joint.connectedBody = collidedObject.GetComponent<Rigidbody>();
+                this.joints.Add(joint);
+            }
+
             if (this.plantable)
             {
                 if (this.plantable.planterBox != null)
@@ -85,6 +115,9 @@ public class InteractableObject : MonoBehaviour
                     this.plantable.setIsPlanted(false);
                 }
             }
+            this.mRigidBody.useGravity = true;
+            this.attachedController = null;
+            this.currentlyInteracting = false;
         }
     }
 
@@ -96,5 +129,24 @@ public class InteractableObject : MonoBehaviour
     public Rigidbody GetRigidbody()
     {
         return this.mRigidBody;
+    }
+
+    void OnCollissionEnter(Collider c)
+    {
+        var interactableObject = c.GetComponent<InteractableObject>();
+        if (interactableObject != null)
+        {
+            this.collidedObject = c.gameObject;
+        }
+    }
+
+    void OnColissionExit(Collider c)
+    {
+        // no longer in contact with this object.
+        var interactableObject = c.GetComponent<InteractableObject>();
+        if (interactableObject != null && collidedObject == c.gameObject)
+        {
+            this.collidedObject = null;
+        }
     }
 }
