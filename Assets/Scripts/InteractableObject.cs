@@ -9,7 +9,7 @@ public class InteractableObject : MonoBehaviour
 
     private Vector3 posDelta;
 
-    private float velocityFactor = 10f;
+    private float velocityFactor = 20000f;
 
     private float rotationFactor = 400f;
     private Quaternion rotationDelta;
@@ -22,42 +22,49 @@ public class InteractableObject : MonoBehaviour
     void Start()
     {
         this.mRigidBody = GetComponent<Rigidbody>();
-        this.currentlyInteracting = false;
         this.interactionPoint = new GameObject().transform;
+        velocityFactor /= mRigidBody.mass;
+        rotationFactor /= mRigidBody.mass;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (currentlyInteracting && attachedController != null)
         {
             posDelta = attachedController.transform.position - interactionPoint.position;
-            this.mRigidBody.velocity = posDelta * velocityFactor * Time.fixedDeltaTime;
-            rotationDelta = attachedController.transform.rotation * Quaternion.Inverse(interactionPoint.rotation);
-            rotationDelta.ToAngleAxis(out angle, out axis);
 
-            if (angle > 180)
-            {
-                angle -= 360;
-            }
+            this.mRigidBody.MovePosition(attachedController.transform.position);
+            this.mRigidBody.MoveRotation(attachedController.transform.rotation);
 
-            this.mRigidBody.angularVelocity = (Time.fixedDeltaTime * angle * axis) * rotationFactor;
+            //mRigidBody.velocity = posDelta * velocityFactor * Time.deltaTime;
+            //rotationDelta = attachedController.transform.rotation * Quaternion.Inverse(interactionPoint.rotation);
+            //rotationDelta.ToAngleAxis(out angle, out axis);
+
+            //if (angle > 180)
+            //{
+            //    angle -= 360;
+            //}
+
+            //mRigidBody.angularVelocity = (Time.deltaTime * angle * axis) * rotationFactor;
         }
     }
 
     public void BeginInteraction(WandController controller)
     {
         this.attachedController = controller;
-        this.currentlyInteracting = true;
         this.interactionPoint.transform.position = controller.transform.position;
         this.interactionPoint.transform.rotation = controller.transform.rotation;
         interactionPoint.SetParent(controller.transform);
+        this.mRigidBody.useGravity = false;
+        this.currentlyInteracting = true;
     }
 
     public void EndInteraction(WandController controller)
     {
         if (controller == attachedController)
         {
+            this.mRigidBody.useGravity = true;
             this.attachedController = null;
             this.currentlyInteracting = false;
         }

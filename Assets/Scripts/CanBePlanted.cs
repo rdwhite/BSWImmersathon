@@ -10,12 +10,15 @@ public class CanBePlanted : MonoBehaviour
     public bool isPlanted = false;
     private Rigidbody body;
 
+    private RigidbodyConstraints originalContraints;
+
     public event PlantedEventHandler HasBeenPlanted;
     public event PlantedEventHandler HasBeenUnPlanted;
 
     void Start()
     {
         this.body = GetComponent<Rigidbody>();
+        this.originalContraints = this.body.constraints;
     }
 
     void setIsPlanted(bool planted)
@@ -38,7 +41,7 @@ public class CanBePlanted : MonoBehaviour
         }
         else
         {
-            body.constraints = RigidbodyConstraints.None;
+            body.constraints = originalContraints;
         }
     }
 }
