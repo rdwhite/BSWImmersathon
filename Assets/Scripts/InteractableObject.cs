@@ -31,10 +31,14 @@ public class InteractableObject : MonoBehaviour
         {
             // posDelta = attachedController.transform.position - interactionPoint.position;
 
+            if (attachedController.pickup == null) // double check here for release
+            {
+                this.EndInteraction(attachedController);
+                return;
+            }
+
             this.mRigidBody.MovePosition(attachedController.transform.position);
             this.mRigidBody.MoveRotation(attachedController.transform.rotation);
-            this.mRigidBody.velocity = Vector3.zero;
-            this.mRigidBody.angularVelocity = Vector3.zero;
 
 
             //mRigidBody.velocity = posDelta * velocityFactor * Time.deltaTime;
