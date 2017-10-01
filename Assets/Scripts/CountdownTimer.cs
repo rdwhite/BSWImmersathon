@@ -27,6 +27,11 @@ public class CountdownTimer : MonoBehaviour
         this.TimerStart((int)this.timeLeft);
     }
 
+    public void ResetTimer()
+    {
+        this.timeLeft = initialTime;
+    }
+
     public void stopTimer()
     {
         stopped = true;
@@ -67,7 +72,7 @@ public class CountdownTimer : MonoBehaviour
 
     void Start()
     {
-        this.timeLeft = this.initialTime;
+        this.ResetTimer();
         this.updateTime();
     }
 
@@ -92,7 +97,6 @@ public class CountdownTimer : MonoBehaviour
     private void updateTime()
     {
         int left = (int)timeLeft;
-       
         this.TimerTick(left);
     }
 }
