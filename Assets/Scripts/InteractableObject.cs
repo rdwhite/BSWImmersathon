@@ -18,10 +18,13 @@ public class InteractableObject : MonoBehaviour
     private bool currentlyInteracting;
     private WandController attachedController = null;
     private Transform interactionPoint;
+
+    private CanBePlanted plantable;
     // Use this for initialization
     void Start()
     {
         this.mRigidBody = GetComponent<Rigidbody>();
+        this.plantable = GetComponent<CanBePlanted>();
         this.interactionPoint = new GameObject().transform;
         velocityFactor /= mRigidBody.mass;
         rotationFactor /= mRigidBody.mass;
@@ -58,6 +61,10 @@ public class InteractableObject : MonoBehaviour
         interactionPoint.SetParent(controller.transform);
         this.mRigidBody.useGravity = false;
         this.currentlyInteracting = true;
+        if (this.plantable)
+        {
+            this.plantable.setIsPlanted(false);
+        }
     }
 
     public void EndInteraction(WandController controller)
@@ -67,6 +74,17 @@ public class InteractableObject : MonoBehaviour
             this.mRigidBody.useGravity = true;
             this.attachedController = null;
             this.currentlyInteracting = false;
+            if (this.plantable)
+            {
+                if (this.plantable.planterBox != null)
+                {
+                    this.plantable.setIsPlanted(true);
+                }
+                else
+                {
+                    this.plantable.setIsPlanted(false);
+                }
+            }
         }
     }
 

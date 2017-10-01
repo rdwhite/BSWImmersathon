@@ -15,19 +15,23 @@ public class CanBePlanted : MonoBehaviour
     public event PlantedEventHandler HasBeenPlanted;
     public event PlantedEventHandler HasBeenUnPlanted;
 
+    public GameObject planterBox;
+
     void Start()
     {
         this.body = GetComponent<Rigidbody>();
         this.originalContraints = this.body.constraints;
     }
 
-    void setIsPlanted(bool planted)
+    public void setIsPlanted(bool planted)
     {
         this.isPlanted = planted;
         if (planted)
         {
+            this.body.MoveRotation(Quaternion.Euler(0, 0, 0));
             this.HasBeenPlanted(this);
-        } else
+        }
+        else
         {
             this.HasBeenUnPlanted(this);
         }
@@ -42,6 +46,22 @@ public class CanBePlanted : MonoBehaviour
         else
         {
             body.constraints = originalContraints;
+        }
+    }
+
+    void OnTriggerEnter(Collider c)
+    {
+        if (c.gameObject.CompareTag("PoleToGroundCollider"))
+        {
+            planterBox = c.gameObject;
+        }
+    }
+
+    void OnTriggerExit(Collider c)
+    {
+        if (c.gameObject.CompareTag("PoleToGroundCollider"))
+        {
+            planterBox = null;
         }
     }
 }
