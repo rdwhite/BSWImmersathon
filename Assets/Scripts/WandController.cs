@@ -27,7 +27,10 @@ public class WandController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var device = SteamVR_Controller.Input((int)trackedObj.index);
+        if (pickup == null)
+        {
+            return;
+        }
         if (controller.GetPressDown(triggerButton))
         {
             if (!this.pickup.IsInteracting())
@@ -50,30 +53,9 @@ public class WandController : MonoBehaviour
         }
     }
 
-    void OnTriggerStay(Collider other)
-    {
-        if (other.tag == "Pickupable")
-        {
-            obj = other.gameObject;
-        }
-        this.touchedObject = other.gameObject;
-    }
-
     void OnTriggerExit(Collider other)
     {
         this.pickup = null;
         this.touchedObject = null;
-    }
-
-    void PickUpObj()
-    {
-        if (obj != null)
-        {
-            fJoint.connectedBody = obj.GetComponent<Rigidbody>();
-        }
-        else
-        {
-            fJoint.connectedBody = null;
-        }
     }
 }
