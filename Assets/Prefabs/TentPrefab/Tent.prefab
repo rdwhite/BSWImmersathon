@@ -2069,6 +2069,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4879247487201656}
+  - component: {fileID: 114374671824599798}
+  - component: {fileID: 114583903643758520}
+  - component: {fileID: 114054355503770050}
   m_Layer: 0
   m_Name: Tent
   m_TagString: Untagged
@@ -3986,8 +3989,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1919442062559052}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -16.904202, y: -0.48155785, z: 10.666803}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_LocalPosition: {x: -16.904202, y: -0.342, z: 11.935}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4652574708728316}
   - {fileID: 4921468384539334}
@@ -6168,6 +6171,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlanted: 0
   planterBox: {fileID: 0}
+--- !u!114 &114054355503770050
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1919442062559052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Target: {fileID: 0}
+  m_ChildIndex: 4294967295
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_MovementThreshold: 0.001
+  m_InterpolateRotation: 0.5
+  m_InterpolateMovement: 0.5
 --- !u!114 &114058652759427512
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6380,6 +6402,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentBody: {fileID: 0}
+--- !u!114 &114374671824599798
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1919442062559052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 233
+    i1: 143
+    i2: 145
+    i3: 70
+    i4: 196
+    i5: 215
+    i6: 180
+    i7: 166
+    i8: 59
+    i9: 189
+    i10: 84
+    i11: 123
+    i12: 38
+    i13: 207
+    i14: 195
+    i15: 233
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!114 &114425698634335988
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6437,6 +6491,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentBody: {fileID: 0}
+--- !u!114 &114583903643758520
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1919442062559052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 1
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!114 &114587608831749050
 MonoBehaviour:
   m_ObjectHideFlags: 1
