@@ -55,7 +55,10 @@ public class WandController : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        this.pickup = null;
-        this.touchedObject = null;
+        if (this.pickup != null)
+        {
+            this.pickup.EndInteraction(this);
+            this.pickup = null;
+        }
     }
 }

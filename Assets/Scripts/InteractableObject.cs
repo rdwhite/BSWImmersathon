@@ -55,30 +55,17 @@ public class InteractableObject : MonoBehaviour
     public void BeginInteraction(WandController controller)
     {
 
-        if (collidedObject != null)// remove the joint as soon as we begin interacting with the object.
-        {
-            var objectBody = collidedObject.GetComponent<Rigidbody>();
-            FixedJoint foundJoint = null;
-            if (objectBody != null)
-            {
-                foreach (var j in joints)
-                {
-                    if (j.connectedBody == objectBody)
-                    {
-                        foundJoint = j;
-                        break;
-                    }
-                }
-            }
-            if (foundJoint != null)
-            {
-                joints.Remove(foundJoint);
-                Destroy(foundJoint);
-            }
-        }
+
+
 
         this.attachedController = controller;
         this.mRigidBody.useGravity = false;
+        this.mRigidBody.isKinematic = true;
+        foreach (var j in joints)
+        {
+            j.connectedBody.isKinematic = this.mRigidBody.isKinematic;
+        }
+
         this.currentlyInteracting = true;
         if (this.plantable)
         {
@@ -109,6 +96,12 @@ public class InteractableObject : MonoBehaviour
                 }
             }
             this.mRigidBody.useGravity = true;
+            this.mRigidBody.isKinematic = false;
+            foreach (var j in joints)
+            {
+                j.connectedBody.isKinematic = this.mRigidBody.isKinematic;
+                Debug.LogWarning(j.currentTorque);
+            }
             this.attachedController = null;
             this.currentlyInteracting = false;
         }
@@ -124,8 +117,9 @@ public class InteractableObject : MonoBehaviour
         return this.mRigidBody;
     }
 
-    void OnCollisionEnter(Collider c)
+    void OnCollisionEnter(Collision collision)
     {
+        var c = collision.collider;
         var interactableObject = c.GetComponent<InteractableObject>();
         if (interactableObject != null)
         {
@@ -133,9 +127,10 @@ public class InteractableObject : MonoBehaviour
         }
     }
 
-    void OnCollisionExit(Collider c)
+    void OnCollisionExit(Collision collision)
     {
         // no longer in contact with this object.
+        var c = collision.collider;
         var interactableObject = c.GetComponent<InteractableObject>();
         if (interactableObject != null && collidedObject == c.gameObject)
         {
