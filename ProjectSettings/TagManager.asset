@@ -10,6 +10,7 @@ TagManager:
   - pickupable
   - Pickupable
   - PoleToGroundCollider
+  - AttachPoint
   layers:
   - Default
   - TransparentFX

@@ -1,23 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class InteractableObject : MonoBehaviour
 {
     private Rigidbody mRigidBody;
 
-
-    private Vector3 posDelta;
-
-    private float velocityFactor = 20000f;
-
-    private float rotationFactor = 400f;
-    private Quaternion rotationDelta;
-    private float angle;
-    private Vector3 axis;
     private bool currentlyInteracting;
     private WandController attachedController = null;
-    private HashSet<FixedJoint> joints = new HashSet<FixedJoint>();
+    private IList<FixedJoint> joints = new List<FixedJoint>();
+
+    private Collider[] colliders;
 
     private GameObject collidedObject;
 
@@ -27,6 +21,7 @@ public class InteractableObject : MonoBehaviour
     {
         this.mRigidBody = GetComponent<Rigidbody>();
         this.plantable = GetComponent<CanBePlanted>();
+        this.colliders = this.GetComponentsInChildren<Collider>();
     }
 
     // Update is called once per frame
@@ -38,6 +33,9 @@ public class InteractableObject : MonoBehaviour
 
             this.mRigidBody.MovePosition(attachedController.transform.position);
             this.mRigidBody.MoveRotation(attachedController.transform.rotation);
+            this.mRigidBody.velocity = Vector3.zero;
+            this.mRigidBody.angularVelocity = Vector3.zero;
+
 
             //mRigidBody.velocity = posDelta * velocityFactor * Time.deltaTime;
             //rotationDelta = attachedController.transform.rotation * Quaternion.Inverse(interactionPoint.rotation);
@@ -54,34 +52,44 @@ public class InteractableObject : MonoBehaviour
 
     public void BeginInteraction(WandController controller)
     {
-
-
-
-
         this.attachedController = controller;
         this.mRigidBody.useGravity = false;
         this.mRigidBody.isKinematic = true;
+        foreach (Collider c in this.colliders)
+        {
+            if (!c.CompareTag("AttachPoint"))
+            {
+                c.enabled = false;
+            }
+            else
+            {
+                c.isTrigger = true;
+            }
+        }
         foreach (var j in joints)
         {
             j.connectedBody.isKinematic = this.mRigidBody.isKinematic;
         }
-
-        this.currentlyInteracting = true;
         if (this.plantable)
         {
             this.plantable.setIsPlanted(false);
         }
+        this.currentlyInteracting = true;
     }
 
     public void EndInteraction(WandController controller)
     {
         if (controller == attachedController)
         {
+
             if (this.collidedObject != null)
             {
-                var joint = this.gameObject.AddComponent<FixedJoint>();
-                joint.connectedBody = collidedObject.GetComponent<Rigidbody>();
-                this.joints.Add(joint);
+                if (this.joints.Where(i => i.connectedBody == collidedObject.GetComponent<Rigidbody>()).FirstOrDefault() == null)
+                {
+                    var joint = this.gameObject.AddComponent<FixedJoint>();
+                    joint.connectedBody = collidedObject.GetComponent<Rigidbody>();
+                    this.joints.Add(joint);
+                }
             }
 
             if (this.plantable)
@@ -97,10 +105,17 @@ public class InteractableObject : MonoBehaviour
             }
             this.mRigidBody.useGravity = true;
             this.mRigidBody.isKinematic = false;
+            foreach (Collider c in this.colliders)
+            {
+                c.enabled = true;
+                if (c.CompareTag("AttachPoint"))
+                {
+                    c.isTrigger = false;
+                }
+            }
             foreach (var j in joints)
             {
                 j.connectedBody.isKinematic = this.mRigidBody.isKinematic;
-                Debug.LogWarning(j.currentTorque);
             }
             this.attachedController = null;
             this.currentlyInteracting = false;
@@ -119,11 +134,17 @@ public class InteractableObject : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+
         var c = collision.collider;
-        var interactableObject = c.GetComponent<InteractableObject>();
-        if (interactableObject != null)
+        var contactPoint = collision.contacts[0];
+        var thisCollider = collision.contacts[0].thisCollider;
+        if (c.CompareTag("AttachPoint") && thisCollider.CompareTag("AttachPoint"))
         {
-            this.collidedObject = c.gameObject;
+            var interactableObject = c.GetComponentInParent<InteractableObject>();
+            if (interactableObject != null)
+            {
+                this.collidedObject = interactableObject.gameObject;
+            }
         }
     }
 
@@ -131,7 +152,7 @@ public class InteractableObject : MonoBehaviour
     {
         // no longer in contact with this object.
         var c = collision.collider;
-        var interactableObject = c.GetComponent<InteractableObject>();
+        var interactableObject = c.GetComponentInParent<InteractableObject>();
         if (interactableObject != null && collidedObject == c.gameObject)
         {
             this.collidedObject = null;

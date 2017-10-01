@@ -79,7 +79,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4497197403871858}
-  - component: {fileID: 95759251142471740}
   m_Layer: 0
   m_Name: frontleftjointarc
   m_TagString: Untagged
@@ -387,7 +386,7 @@ GameObject:
   - component: {fileID: 65560299145358222}
   m_Layer: 0
   m_Name: leftattach
-  m_TagString: Untagged
+  m_TagString: AttachPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -436,7 +435,7 @@ GameObject:
   - component: {fileID: 65801798377585836}
   m_Layer: 0
   m_Name: rightattach
-  m_TagString: Untagged
+  m_TagString: AttachPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -565,7 +564,7 @@ GameObject:
   - component: {fileID: 65440036072060928}
   m_Layer: 0
   m_Name: rightattach
-  m_TagString: Untagged
+  m_TagString: AttachPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1052,7 +1051,7 @@ GameObject:
   - component: {fileID: 65478701398985552}
   m_Layer: 0
   m_Name: leftattach
-  m_TagString: Untagged
+  m_TagString: AttachPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1068,7 +1067,7 @@ GameObject:
   - component: {fileID: 65691834995147456}
   m_Layer: 0
   m_Name: leftattach
-  m_TagString: Untagged
+  m_TagString: AttachPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1118,7 +1117,7 @@ GameObject:
   - component: {fileID: 65980727762834806}
   m_Layer: 0
   m_Name: frontattach
-  m_TagString: Untagged
+  m_TagString: AttachPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1150,7 +1149,7 @@ GameObject:
   - component: {fileID: 65041012628594622}
   m_Layer: 0
   m_Name: frontattach
-  m_TagString: Untagged
+  m_TagString: AttachPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1197,7 +1196,7 @@ GameObject:
   - component: {fileID: 65755321454364940}
   m_Layer: 0
   m_Name: frontattach
-  m_TagString: Untagged
+  m_TagString: AttachPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1373,7 +1372,7 @@ GameObject:
   - component: {fileID: 65572375753899586}
   m_Layer: 0
   m_Name: rearattach
-  m_TagString: Untagged
+  m_TagString: AttachPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1638,8 +1637,6 @@ GameObject:
   - component: {fileID: 33141717611143012}
   - component: {fileID: 136034721691271590}
   - component: {fileID: 23922480480222524}
-  - component: {fileID: 54974378227493388}
-  - component: {fileID: 114278724508698996}
   m_Layer: 0
   m_Name: frontrightrod
   m_TagString: Untagged
@@ -1688,7 +1685,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4425648743497956}
-  - component: {fileID: 95906491054026248}
   - component: {fileID: 54501282560129936}
   - component: {fileID: 65182306306410088}
   - component: {fileID: 114058652759427512}
@@ -2173,7 +2169,7 @@ GameObject:
   - component: {fileID: 65475162555990112}
   m_Layer: 0
   m_Name: frontattach
-  m_TagString: Untagged
+  m_TagString: AttachPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2205,7 +2201,7 @@ GameObject:
   - component: {fileID: 65291768637039312}
   m_Layer: 0
   m_Name: rightattach
-  m_TagString: Untagged
+  m_TagString: AttachPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5349,21 +5345,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!54 &54974378227493388
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1703519195936992}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &65013521811292158
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -5955,23 +5936,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!95 &95759251142471740
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1012073213941166}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: a8dbdabefa4c34774a03d7e32366387e, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!95 &95882508610222646
 Animator:
   serializedVersion: 3
@@ -5998,23 +5962,6 @@ Animator:
   m_GameObject: {fileID: 1958495033096922}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 35b09111273574c6ca0882a28450e58e, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!95 &95906491054026248
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1729719442514962}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: e41c49d0bf29546bcaf93be8a9f60783, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -6164,19 +6111,6 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1357500955113580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f63c4e77b5911914a80284ac769ac040, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPlanted: 0
-  planterBox: {fileID: 0}
---- !u!114 &114278724508698996
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1703519195936992}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f63c4e77b5911914a80284ac769ac040, type: 3}
