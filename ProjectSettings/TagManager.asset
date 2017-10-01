@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - FxTemporaire
+  - projectile
+  - Water
+  - pickupable
+  - Pickupable
+  - PoleToGroundCollider
+  - AttachPoint
   layers:
   - Default
   - TransparentFX
@@ -25,7 +32,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Animal
   - 
   - 
   - 
