@@ -1917,7 +1917,7 @@ GameObject:
   - component: {fileID: 114482031549906796}
   - component: {fileID: 114167464033342776}
   m_Layer: 0
-  m_Name: Tentnet
+  m_Name: Tent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
