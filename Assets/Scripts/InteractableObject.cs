@@ -17,7 +17,6 @@ public class InteractableObject : MonoBehaviour
     private Vector3 axis;
     private bool currentlyInteracting;
     private WandController attachedController = null;
-    private Transform interactionPoint;
     private HashSet<FixedJoint> joints = new HashSet<FixedJoint>();
 
     private GameObject collidedObject;
@@ -28,9 +27,6 @@ public class InteractableObject : MonoBehaviour
     {
         this.mRigidBody = GetComponent<Rigidbody>();
         this.plantable = GetComponent<CanBePlanted>();
-        this.interactionPoint = new GameObject().transform;
-        velocityFactor /= mRigidBody.mass;
-        rotationFactor /= mRigidBody.mass;
     }
 
     // Update is called once per frame
@@ -82,9 +78,6 @@ public class InteractableObject : MonoBehaviour
         }
 
         this.attachedController = controller;
-        this.interactionPoint.transform.position = controller.transform.position;
-        this.interactionPoint.transform.rotation = controller.transform.rotation;
-        interactionPoint.SetParent(controller.transform);
         this.mRigidBody.useGravity = false;
         this.currentlyInteracting = true;
         if (this.plantable)
@@ -131,7 +124,7 @@ public class InteractableObject : MonoBehaviour
         return this.mRigidBody;
     }
 
-    void OnCollissionEnter(Collider c)
+    void OnCollisionEnter(Collider c)
     {
         var interactableObject = c.GetComponent<InteractableObject>();
         if (interactableObject != null)
@@ -140,7 +133,7 @@ public class InteractableObject : MonoBehaviour
         }
     }
 
-    void OnColissionExit(Collider c)
+    void OnCollisionExit(Collider c)
     {
         // no longer in contact with this object.
         var interactableObject = c.GetComponent<InteractableObject>();
