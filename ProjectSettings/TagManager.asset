@@ -9,6 +9,7 @@ TagManager:
   - Water
   - pickupable
   - Pickupable
+  - PoleToGroundCollider
   layers:
   - Default
   - TransparentFX
