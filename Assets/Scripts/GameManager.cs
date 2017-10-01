@@ -7,8 +7,6 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance = null;
 
-    public static CountdownTimer MainGameCountDownTimer = null;
-
     void Awake()
     {
         if (instance == null)
