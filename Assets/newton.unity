@@ -23889,6 +23889,50 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3e105b87325c344b99ff9d46db0098b3, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1215284013 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1648058104512368, guid: 3e105b87325c344b99ff9d46db0098b3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1215284012}
+--- !u!1 &1215284014 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1574626331605318, guid: 3e105b87325c344b99ff9d46db0098b3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1215284012}
+--- !u!114 &1215284015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1215284013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03851e0cd53f31d4da4af85c99f7c4e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magnetForce: 1
+  enabled: 1
+  attract: 1
+  innerRadius: 2
+  outerRadius: 5
+  onlyAffectInteractableItems: 1
+--- !u!114 &1215284016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1215284014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03851e0cd53f31d4da4af85c99f7c4e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magnetForce: 1
+  enabled: 1
+  attract: 1
+  innerRadius: 2
+  outerRadius: 5
+  onlyAffectInteractableItems: 1
 --- !u!1001 &1216414600
 Prefab:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ public class ColliderSnap : MonoBehaviour {
 
     public Collider[] colliders;
 
+
 	// Use this for initialization
 	void Start () {
 		
@@ -15,4 +16,14 @@ public class ColliderSnap : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag =="Pole")
+        {
+
+        }
+    }
 }
+
+
