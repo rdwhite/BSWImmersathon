@@ -24,7 +24,7 @@ public class spawnscript : NetworkBehaviour {
 	GameObject righthand;
 
 	public override void OnStartServer() {
-		Network.sendRate = .01f;
+		
 		ipadcam = (GameObject)Instantiate(ipadCamPrefab);
 		head = (GameObject)Instantiate(headPrefab);
 		lefthand = (GameObject)Instantiate(lefthandPrefab);
@@ -35,29 +35,34 @@ public class spawnscript : NetworkBehaviour {
 		NetworkServer.Spawn (head);
 		NetworkServer.Spawn (lefthand);
 		NetworkServer.Spawn (righthand);
-	}
-	void update()
-	{
-		if (!isLocalPlayer)
-		{
-			return;
-		}
+		head.transform.parent = headObjSource.transform;
+		lefthand.transform.parent = leftContSource.transform;
+		righthand.transform.parent = rightContSource.transform;
+		ipadcam.transform.parent = ipadcamSource.transform;
 
-		//sync pos on network
-		CmdControllerPositionSync();
 	}
-	//sync position on VR controller objects so that VR player movemnts/action can be viewd by normal user
-	[Command]
-	public void CmdControllerPositionSync()
-	{
-
-		head.transform.localRotation = headObjSource.transform.localRotation;
-		head.transform.position = headObjSource.transform.position;
-		lefthand.transform.localRotation = leftContSource.transform.localRotation;
-		righthand.transform.localRotation = rightContSource.transform.localRotation;
-		lefthand.transform.localPosition = leftContSource.transform.position;
-		righthand.transform.localPosition = rightContSource.transform.position;
-		ipadcam.transform.localPosition = ipadcamSource.transform.position;
-		ipadcam.transform.localPosition = ipadcamSource.transform.position;
-	}
+//	void update()
+//	{
+//		if (!isLocalPlayer)
+//		{
+//			return;
+//		}
+//
+//		//sync pos on network
+//		CmdControllerPositionSync();
+//	}
+//	//sync position on VR controller objects so that VR player movemnts/action can be viewd by normal user
+//	[Command]
+//	public void CmdControllerPositionSync()
+//	{
+//
+//		head.transform.localRotation = headObjSource.transform.localRotation;
+//		head.transform.position = headObjSource.transform.position;
+//		lefthand.transform.localRotation = leftContSource.transform.localRotation;
+//		righthand.transform.localRotation = rightContSource.transform.localRotation;
+//		lefthand.transform.localPosition = leftContSource.transform.position;
+//		righthand.transform.localPosition = rightContSource.transform.position;
+//		ipadcam.transform.localPosition = ipadcamSource.transform.position;
+//		ipadcam.transform.localPosition = ipadcamSource.transform.position;
+//	}
 }
