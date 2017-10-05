@@ -17,7 +17,6 @@ public class spawnscript : NetworkBehaviour {
 	public GameObject headPrefab;
 	public GameObject lefthandPrefab;
 	public GameObject righthandPrefab;
-	public float sendInterval = .01f;
 	// Use this for initialization
 	GameObject ipadcam;
 	GameObject head;
@@ -25,6 +24,7 @@ public class spawnscript : NetworkBehaviour {
 	GameObject righthand;
 
 	public override void OnStartServer() {
+		Network.sendRate = .01f;
 		ipadcam = (GameObject)Instantiate(ipadCamPrefab);
 		head = (GameObject)Instantiate(headPrefab);
 		lefthand = (GameObject)Instantiate(lefthandPrefab);
