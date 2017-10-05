@@ -11,6 +11,10 @@ TagManager:
   - Pickupable
   - PoleToGroundCollider
   - AttachPoint
+  - snappoint
+  - shortPole
+  - Arch
+  - Roof
   layers:
   - Default
   - TransparentFX
