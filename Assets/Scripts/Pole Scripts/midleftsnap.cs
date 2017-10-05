@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class midleftsnap : MonoBehaviour {
 
-	public GameObject poleSwap;
-	public GameObject trashPole;
+	public GameObject midLeftPole;
+	public GameObject trashMLPole;
 
-	public GameObject rearLeftPole;
-	public GameObject spRearLeftPole;
 
 	public GameObject roofPole;
 	public GameObject spRoofPole;
@@ -25,9 +23,10 @@ public class midleftsnap : MonoBehaviour {
 	{
 		if (shortPoles.tag == "shortPole") {
 
-			trashPole.SetActive (false);
-			poleSwap.SetActive (true);
+			trashMLPole.SetActive (false);
+			midLeftPole.SetActive (true);
 		}
+
 		if (shortPoles.tag == "Roof") {
 			spRoofPole.SetActive (false);
 			roofPole.SetActive (true);

@@ -15,6 +15,10 @@ TagManager:
   - shortPole
   - Arch
   - Roof
+  - rearRoof
+  - sideRoof
+  - rearPole
+  - midrearPole
   layers:
   - Default
   - TransparentFX

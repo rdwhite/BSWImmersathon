@@ -18,14 +18,14 @@ public class frontrightsnap : MonoBehaviour {
 	void Update () {
 
 	}
-	void OnTriggerEnter(Collider shortPoles)
+	void OnTriggerEnter(Collider collider)
 	{
-		if (shortPoles.tag == "shortPole") {
-
+		if (collider.tag == "shortPole") {
+			rtTrashPole = collider.gameObject;
 			rtTrashPole.SetActive (false);
 			rtPoleSwap.SetActive (true);
 		}
-		if (shortPoles.tag == "Arch") {
+		if (collider.tag == "Arch") {
 			trashArch.SetActive (false);
 			hiddenArch.SetActive (true);
 		}
