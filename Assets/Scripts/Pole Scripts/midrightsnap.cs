@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class midrightsnap : MonoBehaviour {
 
-	public GameObject midRightPole;
-	public GameObject trashMRPole;
 
 
 	public GameObject roofPole;
@@ -21,13 +19,10 @@ public class midrightsnap : MonoBehaviour {
 	}
 	void OnTriggerEnter(Collider collider)
 	{
-		if (collider.tag == "shortPole") {
-			trashMRPole = collider.gameObject;
-			trashMRPole.SetActive (false);
-			midRightPole.SetActive (true);
-		}
+		
 
 		if (collider.tag == "Roof") {
+			spRoofPole = collider.gameObject;
 			spRoofPole.SetActive (false);
 			roofPole.SetActive (true);
 		}

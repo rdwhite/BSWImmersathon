@@ -1892,8 +1892,6 @@ GameObject:
   - component: {fileID: 33817113292078300}
   - component: {fileID: 136263510987828110}
   - component: {fileID: 23316271616934858}
-  - component: {fileID: 54359867441221258}
-  - component: {fileID: 114717740828856248}
   m_Layer: 0
   m_Name: topfrontmid
   m_TagString: Untagged
@@ -2025,6 +2023,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4136040577429718}
   - component: {fileID: 65346464605834862}
+  - component: {fileID: 114844097820927722}
   m_Layer: 0
   m_Name: frontattach
   m_TagString: snappoint
@@ -2581,6 +2580,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4470722398745780}
   - component: {fileID: 65567338229615234}
+  - component: {fileID: 114948217676124640}
   m_Layer: 0
   m_Name: frontattach
   m_TagString: snappoint
@@ -6882,21 +6882,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!54 &54359867441221258
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1604702442775740}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!54 &54372528150662226
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -7282,7 +7267,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1881942309416978}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.02, y: 0.02, z: 0.02}
@@ -7546,7 +7531,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1676166272766728}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.02, y: 0.02, z: 0.02}
@@ -7606,7 +7591,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1840877909849184}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.02, y: 0.02, z: 0.02}
@@ -7678,7 +7663,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1753093884826932}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.02, y: 0.02, z: 0.02}
@@ -7690,7 +7675,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1488223818714610}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.02, y: 0.02, z: 0.02}
@@ -7714,7 +7699,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1520608180042894}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.02, y: 0.02, z: 0.02}
@@ -7774,7 +7759,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1890174062349842}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.02, y: 0.02, z: 0.02}
@@ -7882,7 +7867,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1350588218408680}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.02, y: 0.02, z: 0.02}
@@ -7894,7 +7879,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1848386459178578}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.02, y: 0.02, z: 0.02}
@@ -7906,7 +7891,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1105936095697158}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.02, y: 0.02, z: 0.02}
@@ -8086,7 +8071,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1455123934950284}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.02, y: 0.02, z: 0.02}
@@ -9024,10 +9009,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4089d536ac18b43b39a01a9ae8ade48d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  midLeftPole: {fileID: 1084428122391708}
-  trashMLPole: {fileID: 0}
   roofPole: {fileID: 1552716276530096}
-  spRoofPole: {fileID: 1184655856319306}
+  spRoofPole: {fileID: 0}
 --- !u!114 &114524086854398288
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9523,51 +9506,6 @@ MonoBehaviour:
   m_MovementThreshold: 0.001
   m_InterpolateRotation: 0.5
   m_InterpolateMovement: 0.5
---- !u!114 &114717740828856248
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1604702442775740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa4a39dec1a23a043a14d554ccce8fe0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Rigidbody: {fileID: 0}
-  CanAttach: 1
-  AllowTwoHanded: 0
-  DisableKinematicOnAttach: 1
-  EnableKinematicOnDetach: 0
-  DropDistance: 1
-  EnableGravityOnDetach: 1
-  AttachedHands: []
-  InteractionPoint: {fileID: 0}
-  OnUseButtonDown:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  OnUseButtonUp:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  OnHovering:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  OnBeginInteraction:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  OnEndInteraction:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
 --- !u!114 &114750009460565172
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9907,6 +9845,19 @@ MonoBehaviour:
   m_MovementThreshold: 0.001
   m_InterpolateRotation: 0.5
   m_InterpolateMovement: 0.5
+--- !u!114 &114844097820927722
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1676166272766728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9baf396c0c57487e8e9c8cbb5deda27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frontMidRightPole: {fileID: 1574537943629782}
+  trashfrontmidrightPole: {fileID: 0}
 --- !u!114 &114856119525890054
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10018,6 +9969,19 @@ MonoBehaviour:
   m_MovementThreshold: 0.001
   m_InterpolateRotation: 0.5
   m_InterpolateMovement: 0.5
+--- !u!114 &114948217676124640
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1890174062349842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e333b1ee99714ada819b2e813b31dc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frontMidLeftPole: {fileID: 1084428122391708}
+  trashfrontmidleftPole: {fileID: 0}
 --- !u!114 &114956270839113140
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10104,8 +10068,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b13005fb049a241f49fc0cd61592f3fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  midRightPole: {fileID: 1574537943629782}
-  trashMRPole: {fileID: 0}
   roofPole: {fileID: 1474747162209796}
   spRoofPole: {fileID: 1325028070107392}
 --- !u!136 &136012514984192310

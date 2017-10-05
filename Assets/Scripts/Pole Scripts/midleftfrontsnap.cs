@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class midleftsnap : MonoBehaviour {
+public class midleftfrontsnap : MonoBehaviour {
+
+	public GameObject frontMidLeftPole;
+	public GameObject trashfrontmidleftPole;
 
 
-
-	public GameObject roofPole;
-	public GameObject spRoofPole;
 	// Use this for initialization
 	void Start () {
 
@@ -19,14 +19,12 @@ public class midleftsnap : MonoBehaviour {
 	}
 	void OnTriggerEnter(Collider collider)
 	{
-		
-
 		if (collider.tag == "Roof") {
-			spRoofPole = collider.gameObject;
-			spRoofPole.SetActive (false);
-			roofPole.SetActive (true);
+			trashfrontmidleftPole = collider.gameObject;
+			trashfrontmidleftPole.SetActive (false);
+			frontMidLeftPole.SetActive (true);
 		}
+
 	}
 
 }
-
