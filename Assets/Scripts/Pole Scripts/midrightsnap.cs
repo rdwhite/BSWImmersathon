@@ -19,15 +19,15 @@ public class midrightsnap : MonoBehaviour {
 	void Update () {
 
 	}
-	void OnTriggerEnter(Collider shortPoles)
+	void OnTriggerEnter(Collider collider)
 	{
-		if (shortPoles.tag == "shortPole") {
-
+		if (collider.tag == "shortPole") {
+			trashMRPole = collider.gameObject;
 			trashMRPole.SetActive (false);
 			midRightPole.SetActive (true);
 		}
 
-		if (shortPoles.tag == "Roof") {
+		if (collider.tag == "Roof") {
 			spRoofPole.SetActive (false);
 			roofPole.SetActive (true);
 		}

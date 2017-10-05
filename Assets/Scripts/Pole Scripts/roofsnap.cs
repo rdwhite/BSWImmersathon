@@ -17,9 +17,9 @@ public class roofsnap : MonoBehaviour {
 	void Update () {
 
 	}
-	void OnTriggerEnter(Collider shortPoles)
+	void OnTriggerEnter(Collider collider)
 	{
-		if (shortPoles.tag == "Roof") {
+		if (collider.tag == "Roof") {
 
 			trashRoofPole.SetActive (false);
 			topRoofPole.SetActive (true);

@@ -8,9 +8,9 @@ public class backsnap : MonoBehaviour {
 	public GameObject trashrearRoofPole;
 
 
-	void OnTriggerEnter(Collider shortPoles)
+	void OnTriggerEnter(Collider collider)
 	{
-		if (shortPoles.tag == "rearRoof") {
+		if (collider.tag == "rearRoof") {
 
 			trashrearRoofPole.SetActive (false);
 			rearRoofPole.SetActive (true);

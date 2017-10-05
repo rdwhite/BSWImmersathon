@@ -18,14 +18,14 @@ public class rearleftsnap : MonoBehaviour {
 	void Update () {
 
 	}
-	void OnTriggerEnter(Collider shortPoles)
+	void OnTriggerEnter(Collider collider)
 	{
-		if (shortPoles.tag == "shortPole") {
-
+		if (collider.tag == "shortPole") {
+			trashmidrearPole = collider.gameObject;
 			trashmidrearPole.SetActive (false);
 			midrearPole.SetActive (true);
 		}
-		if (shortPoles.tag == "rearPole") {
+		if (collider.tag == "rearPole") {
 			trashbackPole.SetActive (false);
 			backPole.SetActive (true);
 		}
