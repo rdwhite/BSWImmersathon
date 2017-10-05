@@ -671,7 +671,7 @@ GameObject:
   - component: {fileID: 114249549302692948}
   m_Layer: 0
   m_Name: spmidrooflf
-  m_TagString: Untagged
+  m_TagString: sideRoof
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1004,7 +1004,7 @@ GameObject:
   - component: {fileID: 114538999973533350}
   m_Layer: 0
   m_Name: spmidroofrt
-  m_TagString: Untagged
+  m_TagString: sideRoof
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7711,11 +7711,11 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1876931315915762}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.0225, y: 0.02, z: 0.02}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.02, y: 0.036, z: 0}
 --- !u!65 &65528161791696390
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -8059,11 +8059,11 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1914240902372618}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.0225, y: 0.02, z: 0.02}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -0.02, y: 0.036, z: 0}
 --- !u!65 &65843281706478550
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -8446,7 +8446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Target: {fileID: 4224069051933764}
   m_ChildIndex: 7
-  m_SendInterval: 0.03448276
+  m_SendInterval: 0.5
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_MovementThreshold: 0.001
@@ -8478,7 +8478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Target: {fileID: 4248271947740880}
   m_ChildIndex: 5
-  m_SendInterval: 0.033333335
+  m_SendInterval: 0.5
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_MovementThreshold: 0.001
@@ -8516,7 +8516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Target: {fileID: 4516235082250168}
   m_ChildIndex: 0
-  m_SendInterval: 0.033333335
+  m_SendInterval: 0.5
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_MovementThreshold: 0.001
@@ -8580,7 +8580,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Target: {fileID: 4226032544448692}
   m_ChildIndex: 11
-  m_SendInterval: 0.033333335
+  m_SendInterval: 0.5
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_MovementThreshold: 0.001
@@ -8646,7 +8646,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Target: {fileID: 4445894904471992}
   m_ChildIndex: 14
-  m_SendInterval: 0.033333335
+  m_SendInterval: 0.5
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_MovementThreshold: 0.001
@@ -8729,7 +8729,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Target: {fileID: 4937506488401564}
   m_ChildIndex: 15
-  m_SendInterval: 0.033333335
+  m_SendInterval: 0.5
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_MovementThreshold: 0.001
@@ -8857,7 +8857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Target: {fileID: 4792304579831266}
   m_ChildIndex: 3
-  m_SendInterval: 0.033333335
+  m_SendInterval: 0.5
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_MovementThreshold: 0.001
@@ -9133,7 +9133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Target: {fileID: 4973208714211380}
   m_ChildIndex: 4
-  m_SendInterval: 0.033333335
+  m_SendInterval: 0.5
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_MovementThreshold: 0.001
@@ -9152,7 +9152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Target: {fileID: 4352936421217046}
   m_ChildIndex: 6
-  m_SendInterval: 0.033333335
+  m_SendInterval: 0.5
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_MovementThreshold: 0.001
@@ -9500,7 +9500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Target: {fileID: 4543926096717094}
   m_ChildIndex: 12
-  m_SendInterval: 0.033333335
+  m_SendInterval: 0.5
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_MovementThreshold: 0.001
@@ -9609,7 +9609,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Target: {fileID: 4689492903210034}
   m_ChildIndex: 13
-  m_SendInterval: 0.033333335
+  m_SendInterval: 0.5
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_MovementThreshold: 0.001
@@ -9673,7 +9673,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Target: {fileID: 4185793120602074}
   m_ChildIndex: 10
-  m_SendInterval: 0.033333335
+  m_SendInterval: 0.5
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_MovementThreshold: 0.001
@@ -9756,7 +9756,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Target: {fileID: 4613258976778050}
   m_ChildIndex: 1
-  m_SendInterval: 0.03448276
+  m_SendInterval: 0.5
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_MovementThreshold: 0.001
@@ -9775,7 +9775,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Target: {fileID: 4146513068652654}
   m_ChildIndex: 9
-  m_SendInterval: 0.033333335
+  m_SendInterval: 0.5
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_MovementThreshold: 0.001
@@ -9839,7 +9839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Target: {fileID: 4033499655002290}
   m_ChildIndex: 2
-  m_SendInterval: 0.03448276
+  m_SendInterval: 0.5
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_MovementThreshold: 0.001
@@ -9944,7 +9944,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Target: {fileID: 4922983448359482}
   m_ChildIndex: 8
-  m_SendInterval: 0.033333335
+  m_SendInterval: 0.5
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_MovementThreshold: 0.001
@@ -9963,7 +9963,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Target: {fileID: 4416539064970102}
   m_ChildIndex: 16
-  m_SendInterval: 0.033333335
+  m_SendInterval: 0.5
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_MovementThreshold: 0.001
@@ -10069,7 +10069,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roofPole: {fileID: 1474747162209796}
-  spRoofPole: {fileID: 1325028070107392}
+  spRoofPole: {fileID: 0}
 --- !u!136 &136012514984192310
 CapsuleCollider:
   m_ObjectHideFlags: 1

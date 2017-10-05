@@ -21,7 +21,7 @@ public class midrightsnap : MonoBehaviour {
 	{
 		
 
-		if (collider.tag == "Roof") {
+		if (collider.tag == "sideRoof") {
 			spRoofPole = collider.gameObject;
 			spRoofPole.SetActive (false);
 			roofPole.SetActive (true);
