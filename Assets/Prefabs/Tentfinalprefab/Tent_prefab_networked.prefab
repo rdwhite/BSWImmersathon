@@ -8613,7 +8613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poleSwap: {fileID: 1084428122391708}
-  trashPole: {fileID: 1427211311858896}
+  trashPole: {fileID: 0}
   hiddenArch: {fileID: 1513094368273514}
   trashArch: {fileID: 1920401393216704}
 --- !u!114 &114236467571414698
@@ -9025,7 +9025,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   midLeftPole: {fileID: 1084428122391708}
-  trashMLPole: {fileID: 1427211311858896}
+  trashMLPole: {fileID: 0}
   roofPole: {fileID: 1552716276530096}
   spRoofPole: {fileID: 1184655856319306}
 --- !u!114 &114524086854398288
@@ -9919,7 +9919,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rtPoleSwap: {fileID: 1574537943629782}
-  rtTrashPole: {fileID: 1916940035274536}
+  rtTrashPole: {fileID: 0}
   hiddenArch: {fileID: 1513094368273514}
   trashArch: {fileID: 1920401393216704}
 --- !u!114 &114892221354678112
@@ -10030,7 +10030,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   midrearPole: {fileID: 1456308284957970}
-  trashmidrearPole: {fileID: 1364422827820662}
+  trashmidrearPole: {fileID: 0}
   backPole: {fileID: 1475412944242324}
   trashbackPole: {fileID: 1119255715948648}
 --- !u!114 &114988581421125832
@@ -10090,7 +10090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   midrearPole: {fileID: 1184006855410396}
-  trashmidrearPole: {fileID: 1393991265958282}
+  trashmidrearPole: {fileID: 0}
   backPole: {fileID: 1475412944242324}
   trashbackPole: {fileID: 1119255715948648}
 --- !u!114 &114998610931568812
@@ -10105,7 +10105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   midRightPole: {fileID: 1574537943629782}
-  trashMRPole: {fileID: 1916940035274536}
+  trashMRPole: {fileID: 0}
   roofPole: {fileID: 1474747162209796}
   spRoofPole: {fileID: 1325028070107392}
 --- !u!136 &136012514984192310
