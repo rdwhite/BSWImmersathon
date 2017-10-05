@@ -12,9 +12,24 @@ public class GameLogic : NetworkBehaviour
     public float targetTime = 600.0f;
     public bool ready = false;
 
+
+    public float XRotateAmount = 1f;
+    public float YRotateAmount = 1f;
+    public float ZRotateAmount = 1f;
+
+    private Quaternion initialRotation;
+    private bool shouldRotate;
+    private bool restoreRotation = false;
+
     void Start()
     {
+        this.initialRotation = this.transform.rotation;
 
+    }
+
+    private void Instance_TimerStart(int timeLeft)
+    {
+        this.shouldRotate = true;
     }
 
     // Update is called once per frame
@@ -22,7 +37,22 @@ public class GameLogic : NetworkBehaviour
     {
         if (ready == true)
         {
-            targetTime -= Time.deltaTime;
+
+            if (this.shouldRotate)
+            {
+                this.transform.Rotate(new Vector3(XRotateAmount, YRotateAmount, ZRotateAmount) * Time.deltaTime);
+            }
+            else if (this.restoreRotation)
+            {
+                if (this.transform.rotation == initialRotation)
+                {
+                    this.restoreRotation = false;
+                }
+                else
+                {
+                    this.transform.rotation = Quaternion.Lerp(transform.rotation, initialRotation, 10.0f);
+                }
+            }
 
 
             if (targetTime <= 0.0f)
@@ -37,7 +67,7 @@ public class GameLogic : NetworkBehaviour
     public void startPuzzle()
     { //Begin the puzzle sequence
         startUI.SetActive(false);
-    
+        targetTime -= Time.deltaTime;
         ready = true;
         Debug.Log("foo");
 
