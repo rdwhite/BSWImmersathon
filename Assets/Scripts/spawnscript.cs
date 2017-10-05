@@ -7,8 +7,10 @@ public class spawnscript : NetworkBehaviour {
 
 	public GameObject tentPrefab;
 	// Use this for initialization
-	public override void OnStartServer() {
 
+
+	public override void OnStartServer() {
+		
 
 		var tent = (GameObject)Instantiate(tentPrefab, transform.position, transform.rotation);
 		NetworkServer.Spawn(tent);
