@@ -37,7 +37,7 @@ public class GameLogic : NetworkBehaviour
     public void startPuzzle()
     { //Begin the puzzle sequence
         startUI.SetActive(false);
-        restartUI.SetActive(true);
+    
         ready = true;
         Debug.Log("foo");
 
