@@ -15,6 +15,8 @@ public class spawnscript : NetworkBehaviour {
 		var tent = (GameObject)Instantiate(tentPrefab, transform.position, transform.rotation);
 		NetworkServer.Spawn(tent);
 	}
+
+
 	void Start () {
 		
 	}

@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
-public class GameLogic : MonoBehaviour
+public class GameLogic : NetworkBehaviour
 {
 
     public GameObject player;
@@ -23,7 +24,8 @@ public class GameLogic : MonoBehaviour
     public void startPuzzle()
     { //Begin the puzzle sequence
         startUI.SetActive(false);
-        eventSystem.SetActive(false);
+		restartUI.SetActive (true);
+        
         Debug.Log("foo");
 
     }
@@ -35,6 +37,7 @@ public class GameLogic : MonoBehaviour
     {
         restartUI.SetActive(false);
         startUI.SetActive(true);
+		NetworkManager.singleton.ServerChangeScene("main");
     }
 
 
